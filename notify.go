@@ -12,6 +12,10 @@ type NotifyPushImpl struct {
 	Notifys []NotifyPush
 }
 
+func NewNotifyPushImpl() *NotifyPushImpl {
+	return &NotifyPushImpl{Notifys: make([]NotifyPush, 0)}
+}
+
 func GetNotify(software, token string) (NotifyPush, error) {
 	switch software {
 	case "dingtalk": // 钉钉推送
